@@ -13,16 +13,36 @@ import {
     MealsTitle,
     MealsButton,
     TitleButton,
-    DateTitle,
-    MealsCard,
-    MealsDate,
-    Div,
-    AlimentName,
-    ColorStats,
+    DateTitle
+ 
 
 } from './styles';
 
+const DATA = [
+    {
+      title: "12.08.22",
+      data: ["Pizza", "Burger", "Risotto"]
+    },
+    {
+      title: "11.08.22",
+      data: ["French Fries", "Onion Rings", "Fried Shrimps"]
+    },
+    {
+      title: "10.08.22",
+      data: ["Water", "Coke", "Beer"]
+    },
+    {
+      title: "09.08.22",
+      data: ["Cheese Cake", "Ice Cream"]
+    }
+  ];
+
+
 import logoImg from '../../../assets/Logo.png'
+
+import { AlimentCard } from '../../components/AlimentCard';
+
+import { SectionList } from 'react-native';
 
 export function Dashboard(){
     return(
@@ -46,17 +66,19 @@ export function Dashboard(){
                         + Nova refeição
                     </TitleButton>   
                     </MealsButton >
-                    <DateTitle>
-                    12.08.22
-                    </DateTitle>
-                    <MealsCard>
-                        <MealsDate>20:00</MealsDate>
-                        <Div/>
-                        <AlimentName>X-Tudo</AlimentName>
-                        <ColorStats/>
-                    </MealsCard>
                 </MealsDiv>
+                   
+                <SectionList
+                sections={DATA}
+                keyExtractor={(item, index) => item + index}
+                renderItem={({ item }) => <AlimentCard title={item} />}
+                renderSectionHeader={({ section: { title } }) => (
+                <DateTitle>{title}</DateTitle>
+                )}
+                showsVerticalScrollIndicator={false}
+                />
             </Body>
+          
         </Conteiner>
     )
 }
