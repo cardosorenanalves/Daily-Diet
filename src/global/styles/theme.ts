@@ -3,7 +3,7 @@ export default{
         red_dark: '#C47F17',
 
         red_mid: '#DBAC2C',
-        red_light: '#F1E9C9',
+        red_light: '#F3BABD',
 
         green_dark: '#4B2995',
         green_mid: '#8047F8',
