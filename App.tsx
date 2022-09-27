@@ -8,7 +8,7 @@ import {
 
 import { ThemeProvider,} from 'styled-components';
 import theme from './src/global/styles/theme'
-import { StatusBar } from 'react-native';
+import { ActivityIndicator, StatusBar } from 'react-native';
 
 
 
@@ -26,8 +26,12 @@ export default function App() {
 
   return(
     <ThemeProvider theme={theme}>
+        <StatusBar 
+        backgroundColor="transparent" 
+        barStyle='dark-content' 
+        />
      
-            <Dashboard />
+           {fontsLoaded ? <Dashboard /> : <ActivityIndicator />}
        
      </ThemeProvider>
      )
