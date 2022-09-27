@@ -13,6 +13,7 @@ import { ActivityIndicator, StatusBar } from 'react-native';
 
 
 import { Dashboard } from './src/pages/dashboard';
+import { Statistics } from './src/pages/statistics';
 
 export default function App() {
 
@@ -29,9 +30,10 @@ export default function App() {
         <StatusBar 
         backgroundColor="transparent" 
         barStyle='dark-content' 
+        translucent
         />
      
-           {fontsLoaded ? <Dashboard /> : <ActivityIndicator />}
+           {fontsLoaded ? <Statistics /> : <ActivityIndicator />}
        
      </ThemeProvider>
      )
