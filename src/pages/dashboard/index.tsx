@@ -12,7 +12,13 @@ import {
     MealsDiv,
     MealsTitle,
     MealsButton,
-    TitleButton
+    TitleButton,
+    DateTitle,
+    MealsCard,
+    MealsDate,
+    Div,
+    AlimentName,
+    ColorStats,
 
 } from './styles';
 
@@ -40,6 +46,15 @@ export function Dashboard(){
                         + Nova refeição
                     </TitleButton>   
                     </MealsButton >
+                    <DateTitle>
+                    12.08.22
+                    </DateTitle>
+                    <MealsCard>
+                        <MealsDate>20:00</MealsDate>
+                        <Div/>
+                        <AlimentName>X-Tudo</AlimentName>
+                        <ColorStats/>
+                    </MealsCard>
                 </MealsDiv>
             </Body>
         </Conteiner>
