@@ -11,7 +11,8 @@ import {
     InfoText,
     MealsDiv,
     MealsTitle,
-    MealsButton
+    MealsButton,
+    TitleButton
 
 } from './styles';
 
@@ -33,8 +34,12 @@ export function Dashboard(){
                     <InfoText>das refeições dentro da dieta</InfoText>
                 </StatusCard>
                 <MealsDiv>
-                    <MealsTitle></MealsTitle>
-                    <MealsButton />
+                    <MealsTitle>Refeições</MealsTitle>
+                    <MealsButton >
+                     <TitleButton>
+                        + Nova refeição
+                    </TitleButton>   
+                    </MealsButton >
                 </MealsDiv>
             </Body>
         </Conteiner>
