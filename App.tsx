@@ -10,10 +10,7 @@ import { ThemeProvider,} from 'styled-components';
 import theme from './src/global/styles/theme'
 import { ActivityIndicator, StatusBar } from 'react-native';
 
-
-
-import { Dashboard } from './src/pages/dashboard';
-import { Statistics } from './src/pages/statistics';
+import { Routes } from './src/routes';
 
 export default function App() {
 
@@ -33,7 +30,7 @@ export default function App() {
         translucent
         />
      
-           {fontsLoaded ? <Statistics /> : <ActivityIndicator />}
+           {fontsLoaded ? <Routes /> : <ActivityIndicator />}
        
      </ThemeProvider>
      )
