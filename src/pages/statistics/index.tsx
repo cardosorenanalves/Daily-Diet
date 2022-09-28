@@ -9,12 +9,20 @@ import {
     Info,
     SmallDiv,
     CardSmall,
+    ArrowLeftIcon,
+    BackButton
 } from './styles'
 
 export function Statistics(){
     return(
         <Conteiner>
             <Header>
+                <BackButton>
+                <ArrowLeftIcon
+                size='32px'
+                color='#639339'
+                />
+                </BackButton>
                 <Percentage>90,86%</Percentage>
                 <Info>das refeições dentro da dieta</Info>
             </Header>
@@ -31,11 +39,13 @@ export function Statistics(){
                 <SmallDiv>
                     <CardSmall>
                         <Number>99</Number>
-                        <Info>refeições dentro da dieta</Info>
+                        <Info>{`refeições dentro da 
+              dieta`}</Info>
                     </CardSmall>
                      <CardSmall>
                         <Number>10</Number>
-                        <Info>refeições dentro da dieta</Info>
+                        <Info>{`refeições fora da 
+            dieta`}</Info>
                     </CardSmall>
                 </SmallDiv>
             </Body>
