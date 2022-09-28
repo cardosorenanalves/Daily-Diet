@@ -1,4 +1,5 @@
 import {useNavigation} from '@react-navigation/native'
+import { useState } from 'react'
 
 import {
     Conteiner,
@@ -23,10 +24,15 @@ import {
 
 
 export function RegisterMeals(){
+    const [inputHeight, setInputHeight] = useState(0)
     const navigation = useNavigation()
     
     function handleReturn(){
         navigation.navigate('dashboard')
+    }
+
+    function handleRegister(){
+        navigation.navigate('stats')
     }
     return(
         <Conteiner>
@@ -41,20 +47,35 @@ export function RegisterMeals(){
             <Body>
                 <RegisterView>
                     <Info>Nome</Info>
-                    <InputName/>
+                    <InputName
+                    maxLength={60}
+                    selectionColor='#000000'
+                    />
                 </RegisterView>
                 <RegisterView>
                     <Info>Descrição</Info>
-                    <InputDescription/>
+                    <InputDescription
+                    style={{height: inputHeight}}
+                    multiline={true}
+                    onContentSizeChange={(e)=> setInputHeight(e.nativeEvent.contentSize.height + 12)}
+                    maxLength={305}
+                    selectionColor='#000000'
+                    />
                 </RegisterView>
                 <DateView>
                     <ContentView>
                         <Info>Data</Info>
-                        <DateInput/>
+                        <DateInput 
+                        dataDetectorTypes={'calendarEvent'}
+                        selectionColor='#000000'
+                        keyboardType={'number-pad'}
+                        />
                     </ContentView>
                     <ContentView>
                         <Info>Hora</Info>
-                        <DateInput/>
+                        <DateInput
+                        selectionColor='#000000'
+                        />
                     </ContentView>
                 </DateView>
                 <Info>Está dentro da dieta?</Info>
@@ -69,7 +90,7 @@ export function RegisterMeals(){
                     </ButtonInfo>
                 </DateView>
 
-                <RegisterButton>
+                <RegisterButton onPress={handleRegister}>
                     <Content>Cadastrar refeição</Content>
                 </RegisterButton>
             </Body>
