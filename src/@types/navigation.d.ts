@@ -4,6 +4,7 @@ export declare global{
             dashboard: undefined;
             statistics: undefined;
             register: undefined;
+            stats: undefined;
         }
     }
 }
