@@ -64,16 +64,18 @@ border-color: #DDDEDF;
 border-radius: 6px;
 
 margin-top: 4px;
+padding: 10px;
 `;
 
 export const InputDescription = styled(TextInput)`
 width: 100%;
-height: 120px;
+
 
 border: 1px solid;
 border-color: #DDDEDF;
 border-radius: 6px;
 
+padding: 10px;
 margin-top: 4px;
 `;
 
@@ -99,6 +101,7 @@ border-color: #DDDEDF;
 border-radius: 6px;
 
 margin-top: 4px;
+padding: 10px;
 `;
 
 export const ButtonInfo = styled.TouchableOpacity`
