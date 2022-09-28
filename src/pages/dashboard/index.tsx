@@ -18,6 +18,14 @@ import {
 
 } from './styles';
 
+import logoImg from '../../assets/Logo.png'
+
+import { AlimentCard } from '../../components/AlimentCard';
+
+import { SectionList } from 'react-native';
+
+import {useNavigation} from '@react-navigation/native'
+
 const DATA = [
     {
       title: "12.08.22",
@@ -38,13 +46,20 @@ const DATA = [
   ];
 
 
-import logoImg from '../../../assets/Logo.png'
 
-import { AlimentCard } from '../../components/AlimentCard';
-
-import { SectionList } from 'react-native';
 
 export function Dashboard(){
+
+  const navigation = useNavigation()
+
+  function handleStatus(){
+    navigation.navigate('statistics')
+  }
+
+  function handleRegister(){
+    navigation.navigate('register')
+  }
+
     return(
         <Conteiner>
             <Header>
@@ -54,14 +69,18 @@ export function Dashboard(){
                 }}/>
             </Header>
             <Body>
-                <StatusCard>
+                <StatusCard
+                onPress={handleStatus}
+                >
                     <IconArrow/>
                     <Percentage>98,86%</Percentage>
                     <InfoText>das refeições dentro da dieta</InfoText>
                 </StatusCard>
                 <MealsDiv>
                     <MealsTitle>Refeições</MealsTitle>
-                    <MealsButton >
+                    <MealsButton
+                    onPress={handleRegister}
+                    >
                      <TitleButton>
                         + Nova refeição
                     </TitleButton>   
