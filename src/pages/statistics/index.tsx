@@ -1,3 +1,6 @@
+
+import {useNavigation} from '@react-navigation/native'
+
 import {
     Conteiner,
     Header,
@@ -14,10 +17,18 @@ import {
 } from './styles'
 
 export function Statistics(){
+    const navigation = useNavigation()
+    
+    function handleReturn(){
+        navigation.navigate('dashboard')
+    }
+
     return(
         <Conteiner>
             <Header>
-                <BackButton>
+                <BackButton
+                onPress={handleReturn}
+                >
                 <ArrowLeftIcon
                 size='32px'
                 color='#639339'
